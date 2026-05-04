@@ -1,0 +1,15 @@
+jinja2
+python-multipart
+alembic
+asyncpg
+itsdangerous
+passlib
+bcrypt==3.2.2
+email-validator
+fastapi
+uvicorn
+sqlalchemy
+pydantic-settings
+python-dotenv
+gunicorn
+psycopg2-binary
