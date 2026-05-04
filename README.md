@@ -62,8 +62,6 @@ SECRET_KEY=your_secret_key
 DATABASE_URL=postgresql+asyncpg://user:password@db:5432/db_name
 ```
 
-⚠️ `DATABASE_URL` is mandatory. Without it, the application will not start.
-
 ---
 
 ## 🐳 Run with Docker (Recommended)
@@ -114,15 +112,6 @@ uvicorn main:app --reload
 - Uses session-based authentication
 - Role-based access control (admin/user)
 - Sessions handled via middleware
-
----
-
-## 📌 Important Notes
-
-- Uses async SQLAlchemy → requires async driver (`asyncpg`)
-- Alembic must be configured correctly for migrations
-- Static and templates must be properly mounted in FastAPI
-- Ensure DB is ready before app startup (important in Docker)
 
 ---
 
