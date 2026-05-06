@@ -1,5 +1,5 @@
 # Awtik Cash 💸
-![CI Pipeline](https://github.com/ТВОЙ_НИК/awtik-cash/actions/workflows/ci.yml/badge.svg)
+![CI Pipeline](https://github.com/awt1k-dev/awtik-cash/actions/workflows/ci.yml/badge.svg)
 
 Awtik Cash is a full-stack web application built with FastAPI that provides authentication, profile management, and a basic financial transaction system with admin functionality.
 
