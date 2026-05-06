@@ -30,4 +30,4 @@ COPY . .
 EXPOSE 8000
 
 # Команда запуска совпадает с той, что в docker-compose
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000", "app.main:app"]

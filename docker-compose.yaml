@@ -14,7 +14,7 @@ services:
     build: .
     container_name: web
     # Сначала применяем миграции, затем запускаем сервер
-    command: sh -c "alembic upgrade head && gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 main:app"
+    command: sh -c "alembic upgrade head && gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 app.main:app"
     ports:
       - "8000:8000"
     volumes:

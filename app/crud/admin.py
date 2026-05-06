@@ -14,7 +14,7 @@ async def is_admin(db: AsyncSession, user_id: int) -> bool:
     else:
         return False
 
-async def get_all_users(db: AsyncSession) -> tuple:
+async def get_all_users(db: AsyncSession) -> tuple[tuple[User, int]]:
     query = (
         select(
             User, 
@@ -26,7 +26,7 @@ async def get_all_users(db: AsyncSession) -> tuple:
     result = await db.execute(query)
     return result.all()
 
-async def get_user_by_id_with_tx(db: AsyncSession, user_id: int) -> User | None:
+async def get_user_by_id_with_tx(db: AsyncSession, user_id: int) -> tuple[User, int] | None:
     query = (
         select(
             User, 

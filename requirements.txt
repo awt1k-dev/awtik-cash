@@ -13,3 +13,10 @@ pydantic-settings
 python-dotenv
 gunicorn
 psycopg2-binary
+pytest
+aiosqlite
+email-validator
+httpx
+starlette
+websockets
+pytest-asyncio

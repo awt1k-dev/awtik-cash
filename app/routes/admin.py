@@ -11,7 +11,7 @@ from app.core.security import check_auth
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
-@router.get('/')
+@router.get('')
 async def admin(request: Request, db: AsyncSession = Depends(get_db)):
     user_id = await check_auth(request, db)
     match user_id:

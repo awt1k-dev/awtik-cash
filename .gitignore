@@ -12,3 +12,10 @@ __pycache__/
 .vscode/
 .idea/
 nginx.conf/
+tasks
+
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml

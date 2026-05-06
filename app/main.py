@@ -25,4 +25,4 @@ app.include_router(transactions.router)
 app.include_router(admin.router)
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host=settings.APP_HOST, port=settings.APP_PORT, reload=settings.DEBUG)
+    uvicorn.run("app.main:app", host=settings.APP_HOST, port=settings.APP_PORT, reload=settings.DEBUG)

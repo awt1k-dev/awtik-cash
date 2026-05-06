@@ -25,6 +25,7 @@ Awtik Cash is a full-stack web application built with FastAPI that provides auth
 - **Auth:** Session-based
 - **Migrations:** Alembic
 - **DevOps:** Docker / Docker Compose
+- **Testing:** Pytest, pytest-asyncio, pytest-cov (93% Coverage)
 
 ---
 
@@ -33,14 +34,19 @@ Awtik Cash is a full-stack web application built with FastAPI that provides auth
 ```
 app/
  ├── core/           # Config, security, utils
+ ├── crud/           # Database logic
  ├── db/             # DB models & session
  ├── routes/         # Endpoints & views
- ├── templates/      # HTML templates
  ├── static/         # CSS, JS, images
+ ├── templates/      # HTML templates
  ├── schemas.py      # Pydantic schemas
- ├── crud.py         # Database logic
-main.py              # Entry point
-alembic/             # DB migrations
+ ├── main.py         # Entry point
+migrations/          # DB migrations
+tests/               # Tests
+alembic.ini
+LICENSE
+make_admin.py
+pytest.ini
 Dockerfile
 docker-compose.yaml
 ```
@@ -107,6 +113,17 @@ uvicorn main:app --reload
 
 ---
 
+## 🧪 Testing (93% Coverage)
+
+The project is heavily tested to ensure data integrity and secure role-based access control (RBAC).
+
+Run the tests using:
+```bash
+pytest
+```
+
+---
+
 ## 🔐 Authentication
 
 - Uses session-based authentication
@@ -134,3 +151,4 @@ This project demonstrates:
 - Understanding of async Python
 - Experience with real-world tools (Docker, Alembic)
 - Full-stack integration basics
+- Test-Driven mindset (Pytest, DB mocking, dynamic fixtures)

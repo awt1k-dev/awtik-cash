@@ -33,6 +33,12 @@ class UserRegisterSchema(BaseModel):
             raise ValueError("Password must include one letter in upper case!")
         
         return self
+    
+    @model_validator(mode='after')
+    def check_dot(self) -> 'UserRegisterSchema':
+        if "." in self.username and not "@" in self.username:
+            raise ValueError('username cant include "."')
+        return self
 
 class UserLoginSchema(BaseModel):
     login: Annotated[str, Field(min_length=3, max_length=16)] | EmailStr
@@ -48,14 +54,26 @@ class UserLoginSchema(BaseModel):
             login=login,
             password=password,
         )
+    
+    @model_validator(mode='after')
+    def check_dot(self) -> 'UserLoginSchema':
+        if "." in self.login and not "@" in self.login:
+            raise ValueError('username cant include "."')
+        return self
 
 class TransactionSchema(BaseModel):
-    type: str
-    category: str
-    amount: int
+    type: Literal["income", "expense"]
+    category: Annotated[str, Field(max_length=30, min_length=1)]
+    amount: Annotated[int, Field(gt=0)]
     desc: Annotated[str, Field(max_length=100)] | None
 
 class UserEditSchema(BaseModel):
     username: Annotated[str, Field(min_length=3, max_length=16)]
     email: EmailStr
     role: Literal["user", "moderator", "admin"]
+
+    @model_validator(mode='after')
+    def check_dot(self) -> 'UserEditSchema':
+        if "." in self.username and not "@" in self.username:
+            raise ValueError('username cant include "."')
+        return self

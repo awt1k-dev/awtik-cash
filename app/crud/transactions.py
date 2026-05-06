@@ -20,10 +20,12 @@ async def create_transaction_db(db: AsyncSession, user_id: int, transaction_data
         else:
             user.balance -= new_transaction.amount
 
-    db.add(new_transaction)
-    await db.commit()
-    await db.refresh(new_transaction)
-    return new_transaction
+        db.add(new_transaction)
+        await db.commit()
+        await db.refresh(new_transaction)
+        return new_transaction
+    else:
+        return False
 
 async def delete_transaction_db(db: AsyncSession, user_id: int, transaction_id: int) -> bool:
     query = (

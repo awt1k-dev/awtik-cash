@@ -24,7 +24,7 @@ async def create_user(db: AsyncSession, user_data: UserRegisterSchema) -> User |
         await db.commit()
         await db.refresh(new_user)
         return new_user
-    except:
+    except Exception as e:
         return False
 
 async def check_login(db: AsyncSession, user_data: UserLoginSchema) -> int | None:

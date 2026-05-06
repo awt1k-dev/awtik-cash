@@ -37,7 +37,7 @@ async def create_transaction(
     ):
     user_id = request.session.get("user_id")
     if not user_id: 
-        return {"ok": False, "message": "Anauthorized"}
+        return {"ok": False, "message": "Unauthorized"}
     
     transaction = await create_transaction_db(db, user_id, transaction_data)
 
