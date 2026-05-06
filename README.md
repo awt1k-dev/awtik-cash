@@ -1,4 +1,5 @@
 # Awtik Cash 💸
+![CI Pipeline](https://github.com/ТВОЙ_НИК/awtik-cash/actions/workflows/ci.yml/badge.svg)
 
 Awtik Cash is a full-stack web application built with FastAPI that provides authentication, profile management, and a basic financial transaction system with admin functionality.
 
@@ -25,7 +26,7 @@ Awtik Cash is a full-stack web application built with FastAPI that provides auth
 - **Auth:** Session-based
 - **Migrations:** Alembic
 - **DevOps:** Docker / Docker Compose
-- **Testing:** Pytest, pytest-asyncio, pytest-cov (93% Coverage)
+- **Testing:** Pytest, pytest-asyncio, pytest-cov | Code Coverage: 83% (Verified by CI)
 
 ---
 
@@ -113,7 +114,7 @@ uvicorn main:app --reload
 
 ---
 
-## 🧪 Testing (93% Coverage)
+## 🧪 Testing (83% Coverage)
 
 The project is heavily tested to ensure data integrity and secure role-based access control (RBAC).
 
